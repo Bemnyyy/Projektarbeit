@@ -16,7 +16,6 @@ DAILY_LIMIT = 800 # Max. eigentlich 1000 aber zur Sicherheit 800
 MIN_INTERVAL = 900 # 5 Minuten in sek.(300)
 
 
-
 def load_weather_data():
     url = f'https://api.openweathermap.org/data/2.5/weather?lat={LAT}&lon={LON}&units={UNITS}&appid={API_KEY}'
     response = rs.get(url)
