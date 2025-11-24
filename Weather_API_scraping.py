@@ -18,7 +18,7 @@ MIN_INTERVAL = 900 # 5 Minuten in sek.(300)
 def load_weather_data():
     url = f'https://api.openweathermap.org/data/2.5/weather?lat={LAT}&lon={LON}&units={UNITS}&appid={API_KEY}'
     response = rs.get(url)
-    return [response.json()] # Liste für DataFrame-Kompatibilität
+    return [response.json()]# Liste für DataFrame-Kompatibilität
 
 def create_SQL(df):
     df_flat = pd.json_normalize(df.to_dict(orient="records")) # API Antwort "flach" auflösen aufgrund von verschachtelung der daten von der API

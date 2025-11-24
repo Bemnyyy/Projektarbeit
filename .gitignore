@@ -4,3 +4,4 @@ Projektvenv
 SQL_API_Beispiel.py
 Notebook.ipynb
 config.py
+__pycache__
