@@ -7,3 +7,4 @@ config.py
 __pycache__
 Weather_Data.db
 nextbike_data.db
+weather_counter.json
