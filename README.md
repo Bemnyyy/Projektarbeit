@@ -8,8 +8,8 @@ Das Projekt umfasst Analysen, Visualisierungen und Programmieraufgaben, die in J
 
 ## Technologien
 
-- Jupyter Notebook (Hauptbestandteil des Projekts)
-- Python (1.4% im Codeanteil)
+- Jupyter Notebook
+- Python
 - Weitere Abhängigkeiten sind in den Notebooks dokumentiert.
 
 ## API Scraping Hinweise
