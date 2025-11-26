@@ -25,8 +25,7 @@ def create_SQL(df):
     df_flat['weather'] = df_flat['weather'].apply(json.dumps)
     engine = create_engine(f"sqlite:///{DB_PATH}")
     df_flat.to_sql("karlsruhe_weather", con=engine, if_exists="append", index=False)
-
-    print(f"{len(df_flat)} Datensätze wurden in die Datenbank geschrieben am {datetime.now().strftime("%Y-%m-%d")} um {datetime.now().strftime("%H:%M:%S")}")
+    print(f"{len(df_flat)} Datensätze wurden in die Datenbank geschrieben am {datetime.now().strftime('%Y-%m-%d')} um {datetime.now().strftime('%H:%M:%S')}")
     return df_flat
 
 def read_counter():
