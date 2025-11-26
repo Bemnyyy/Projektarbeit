@@ -23,7 +23,7 @@ Anschließend ist eine Konfigurationsdatei zu erstellen, die diese API-Keys enth
 1. Repository klonen:
 git clone https://github.com/Bemnyyy/Projektarbeit.git
 
-2. Jupyter Notebook installieren (falls noch nicht geschehen):
+2. Jupyter Notebook installieren (falls noch nicht geschehen).
 
 3. Abhängigkeiten installieren (siehe requierements.txt).
 
