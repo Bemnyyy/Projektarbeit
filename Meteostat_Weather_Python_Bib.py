@@ -34,6 +34,7 @@ ax.set_ylabel('Wert')
 ax.set_title('Niederschlag & Sonnenscheindauer – stündlich')
 plt.tight_layout()
 plt.show()
+
 '''
 import numpy as np
 

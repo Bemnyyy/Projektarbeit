@@ -1,4 +1,5 @@
 Projektvenv
+*.db
 *.sqbpro
 SQL_API_Beispiel.py
 Notebook.ipynb

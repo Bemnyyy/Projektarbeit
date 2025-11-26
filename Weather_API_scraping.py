@@ -5,8 +5,8 @@ import requests as rs
 from datetime import datetime, date as dt_date
 import time
 import json
+from config import API_KEY
 
-API_KEY = "318d1f5c5c53e061c48b5350c5ef3811"
 LAT = 49.006889
 LON = 8.403653
 UNITS = "metric"
@@ -14,7 +14,6 @@ DB_PATH = "Weather_Data.db"
 COUNTER_FILE = "weather_counter.json"
 DAILY_LIMIT = 800 # Max. eigentlich 1000 aber zur Sicherheit 800
 MIN_INTERVAL = 900 # 5 Minuten in sek.(300)
-
 
 def load_weather_data():
     url = f'https://api.openweathermap.org/data/2.5/weather?lat={LAT}&lon={LON}&units={UNITS}&appid={API_KEY}'
@@ -26,6 +25,7 @@ def create_SQL(df):
     df_flat['weather'] = df_flat['weather'].apply(json.dumps)
     engine = create_engine(f"sqlite:///{DB_PATH}")
     df_flat.to_sql("karlsruhe_weather", con=engine, if_exists="append", index=False)
+
     print(f"{len(df_flat)} Datensätze wurden in die Datenbank geschrieben am {datetime.now().strftime("%Y-%m-%d")} um {datetime.now().strftime("%H:%M:%S")}")
     return df_flat
 
@@ -60,153 +60,4 @@ if __name__ == '__main__':
         create_SQL(df)
         counter["count"] += 1
         write_counter(counter)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         time.sleep(MIN_INTERVAL)
