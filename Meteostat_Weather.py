@@ -6,7 +6,7 @@ from datetime import datetime
 from config import API_KEY_METEOSTAT 
 
 DB_PATH = "Weather_Data_2.db"
-CURRENT_DATE = "2025-11-24"# str(datetime.now())[0:10]
+CURRENT_DATE = "2025-11-11"# str(datetime.now())[0:10]
 
 
 def load_weather_data():

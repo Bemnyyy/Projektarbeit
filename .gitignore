@@ -1,7 +1,8 @@
 Projektvenv
-*.db
 *.sqbpro
 SQL_API_Beispiel.py
 Notebook.ipynb
 config.py
 __pycache__
+Weather_Data.db
+nextbike_data.db
