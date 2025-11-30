@@ -38,7 +38,7 @@ def clean_weather_data(json_data):
 # creating a SQL-DataFrame to easily view and display the data
 def create_SQL(df):
     engine = create_engine(f"sqlite:///{DB_PATH}")
-    df.to_sql("karlsruhe_weather_3", con=engine, if_exists="append", index=False)
+    df.to_sql("karlsruhe_weather_12_2025", con=engine, if_exists="append", index=False)
     print(f"{len(df)} Datensätze wurden in die Datenbank geschrieben am {datetime.now().strftime('%Y-%m-%d')} um {datetime.now().strftime('%H:%M:%S')}")
     return df
 
@@ -48,4 +48,3 @@ if __name__ == '__main__':
     weather = clean_weather_data(data)
     df = pd.DataFrame(weather)
     create_SQL(df)
-    rename_table(engine)
