@@ -1,12 +1,12 @@
 import requests
 import json
 import pandas as pd
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
 from datetime import datetime
 from config import API_KEY_METEOSTAT 
 
-DB_PATH = "Weather_Data_2.db"
-CURRENT_DATE = str(datetime.now())[0:10]
+DB_PATH = "Weather_Data_3.db"
+CURRENT_DATE = "2025-12-01" #str(datetime.now())[0:10]
 
 def load_weather_data():
     url = "https://meteostat.p.rapidapi.com/stations/hourly"
@@ -35,7 +35,7 @@ def clean_weather_data(json_data):
 
 def create_SQL(df):
     engine = create_engine(f"sqlite:///{DB_PATH}")
-    df.to_sql("karlsruhe_weather_2", con=engine, if_exists="append", index=False)
+    df.to_sql("karlsruhe_weather_3", con=engine, if_exists="append", index=False)
     print(f"{len(df)} Datensätze wurden in die Datenbank geschrieben am {datetime.now().strftime('%Y-%m-%d')} um {datetime.now().strftime('%H:%M:%S')}")
     return df
 
@@ -44,3 +44,4 @@ if __name__ == '__main__':
     weather = clean_weather_data(data)
     df = pd.DataFrame(weather)
     create_SQL(df)
+    rename_table(engine)
