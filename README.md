@@ -17,6 +17,7 @@ Das Projekt umfasst Analysen, Visualisierungen und Programmieraufgaben, die in J
 Für die Verwendung der API-Scraping-Skripte in diesem Projekt ist es notwendig, eigenständig einen Account bei OpenWeatherMap oder Meteostat zu erstellen. Dort muss ein API-Key generiert werden, der für die Abfrage der Wetterdaten erforderlich ist.
 
 OpenWeatherMap: https://openweathermap.org/api
+
 Meteostat/Rapid: https://dev.meteostat.net/api/
 
 Der Basic / Kostenlose Plan reicht bei beiden aus, beachte dennoch die maximalen Abfragen!
