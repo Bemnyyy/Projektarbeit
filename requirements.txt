@@ -1,4 +1,3 @@
-# Following is a list with all dependencies and python bibs which you have
-# download to be able to run the programm
+Following is a list with all dependencies and python bibs which you have to download to be able to run the programm
 
 pip install sqlalchemy pandas requests meteostat matplotlib seaborn
