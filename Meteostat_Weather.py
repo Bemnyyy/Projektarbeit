@@ -1,12 +1,11 @@
 import requests
-import json
 import pandas as pd
-from sqlalchemy import create_engine, text
+from sqlalchemy import create_engine
 from datetime import datetime
 from config import API_KEY_METEOSTAT 
 
 DB_PATH = "Weather_Data_3.db"
-CURRENT_DATE = "2025-12-01" #str(datetime.now())[0:10]
+CURRENT_DATE = str(datetime.now())[0:10] # Time format example: "2025-09-30"
 
 # Get Data from API (Output: Dict, "meta" + "data")
 def load_weather_data():
@@ -38,8 +37,8 @@ def clean_weather_data(json_data):
 # creating a SQL-DataFrame to easily view and display the data
 def create_SQL(df):
     engine = create_engine(f"sqlite:///{DB_PATH}")
-    df.to_sql("karlsruhe_weather_12_2025", con=engine, if_exists="append", index=False)
-    print(f"{len(df)} Datensätze wurden in die Datenbank geschrieben am {datetime.now().strftime('%Y-%m-%d')} um {datetime.now().strftime('%H:%M:%S')}")
+    df.to_sql("karlsruhe_weather_09_2025", con=engine, if_exists="append", index=False)
+    print(f"{len(df)} Datensätze wurden in die Datenbank geschrieben am {datetime.now().strftime('%Y-%m-%d')} um {datetime.now().strftime('%H:%M:%S')} für folgendes Datum: {CURRENT_DATE}")
     return df
 
 # Loading all the functions and defining df as a DataFrame to convert the list Data from previous to a SQL-DataFrame
