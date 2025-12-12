@@ -1,57 +1,138 @@
-# Projektarbeit
+Absolut\! Hier ist die überarbeitete `README.md`, bei der ich alle Installationsschritte in das einheitliche Format mit Kopfzeile, Code-Block und Erklärungen gesetzt habe.
 
-Dieses Repository enthält eine Projektarbeit, die hauptsächlich in Python und Jupyter Notebooks umgesetzt wurde. Der Fokus liegt auf datenanalytischer Verarbeitung und Programmierung mit Python. Hierbei sollen Wetterdaten gesammelt werden und im Anschluss mit Next-Bike Daten verglichen werden um auf das Ausleihverhalten zurückschließen zu können.
+Du kannst diesen Code direkt in deine `README.md` kopieren:
 
-## Projektbeschreibung
+````markdown
+# 🚲 Wetter- & Ausleihverhalten-Analyse (Projektarbeit)
 
-Das Projekt umfasst Analysen, Visualisierungen und Programmieraufgaben, die in Jupyter Notebooks dokumentiert sind und API-Scraping Codes in Python. Es werden verschiedene Methoden der Datenverarbeitung und -auswertung angewandt.
+![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebooks-orange?style=for-the-badge&logo=jupyter)
+![License](https://img.shields.io/github/license/Bemnyyy/Projektarbeit?style=for-the-badge)
 
-## Technologien
+## 🎯 Projektübersicht
 
-- Jupyter Notebook
-- Python
-- Weitere Abhängigkeiten sind in den Notebooks und in der requirements.txt dokumentiert.
+Dieses Repository enthält die vollständige Implementierung einer Projektarbeit, die sich der **datenanalytischen Untersuchung des Ausleihverhaltens von NextBike im Kontext verschiedener Wetterbedingungen** widmet.
 
-## API Scraping Hinweise
-
-Für die Verwendung der API-Scraping-Skripte in diesem Projekt ist es notwendig, eigenständig einen Account bei OpenWeatherMap oder Meteostat zu erstellen. Dort muss ein API-Key generiert werden, der für die Abfrage der Wetterdaten erforderlich ist.
-
-OpenWeatherMap: https://openweathermap.org/api
-
-Meteostat/Rapid: https://dev.meteostat.net/api/
-
-Der Basic / Kostenlose Plan reicht bei beiden aus, beachte dennoch die maximalen Abfragen!
-
-Anschließend ist eine Konfigurationsdatei zu erstellen, die diese API-Keys enthält, damit die Scraping-Skripte darauf zugreifen können.
-
-## Installation
-
-1. Repository klonen:
-git clone https://github.com/Bemnyyy/Projektarbeit.git
-
-2. Jupyter Notebook installieren (falls noch nicht geschehen).
-
-3. Abhängigkeiten installieren (siehe requierements.txt).
-
-4. API Keys anlegen und Konfiguration erstellen (siehe oben).
-
-## Nutzung
-
-- Starte die .py Programme nachdem alle Abhängigkeiten installiert wurden und die Konfigurationsdatei angelegt wurden.
-
-- Im Anschluss an werden SQL-Dateien erstellt welche in weiteren Schritten über die Notebooks dargestellt werden können.
-
-- Starte Jupyter Notebook im Projektverzeichnis:
-jupyter notebook
-
-- Öffne die einzelnen Notebooks und führe die Zellen aus.
-
-## Lizenz
-
-Dieses Projekt steht unter der MIT-Lizenz. Details findest du in der LICENSE-Datei.
-
-## Kontakt
-
-Bei Fragen und Anregungen bitte ein Issue im Repository öffnen.
+Das Kernziel ist es, einen statistischen Zusammenhang zwischen gesammelten Wetterdaten (Temperatur, Niederschlag, etc.) und den NextBike-Nutzungsdaten herzustellen, um Muster und Rückschlüsse auf die Mobilitätsgewohnheiten der Nutzer zu ziehen.
 
 ---
+
+### 🌟 Hauptfunktionen
+
+* **API-Scraping:** Automatisierte Erfassung von Wetterdaten über externe APIs.
+* **Datenverarbeitung:** Speicherung der gesammelten Daten in SQL-Datenbanken (`.db`-Dateien).
+* **Datenanalyse:** Durchführung von Analysen, Korrelationen und Visualisierungen in interaktiven Jupyter Notebooks.
+* **Wetterdaten:** Integration von Datenquellen wie OpenWeatherMap und Meteostat.
+
+## 🛠️ Technologien & Stack
+
+| Kategorie | Technologie | Beschreibung |
+| :--- | :--- | :--- |
+| **Sprache** | Python (3.x) | Die Basis für Datenverarbeitung und Skripte. |
+| **Analyse** | Jupyter Notebook | Interaktive Umgebung für Analysen und Visualisierungen. |
+| **Datenbank** | SQLite (implizit) | Speicherung der gesammelten Roh- und Prozessdaten. |
+| **Bibliotheken** | `requirements.txt` | Alle notwendigen Python-Abhängigkeiten (z.B. Pandas, Matplotlib, Meteostat-Lib). |
+
+## 🚀 Erste Schritte
+
+Befolge diese Schritte, um das Projekt lokal einzurichten und auszuführen.
+
+### 1. Repository klonen
+
+Klone das Projekt auf deinen lokalen Rechner:
+
+```bash
+git clone [https://github.com/Bemnyyy/Projektarbeit.git](https://github.com/Bemnyyy/Projektarbeit.git)
+cd Projektarbeit
+````
+
+### 2\. Abhängigkeiten installieren
+
+Alle benötigten Python-Bibliotheken sind in der `requirements.txt` aufgeführt.
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3\. API-Konfiguration (Wichtig\!)
+
+Die Skripte zur Wetterdatenerfassung benötigen einen API-Schlüssel (Key).
+
+1.  **Registrierung:** Erstelle einen kostenlosen Account bei einem der folgenden Dienste:
+      * [OpenWeatherMap API](https://openweathermap.org/api)
+      * [Meteostat API](https://dev.meteostat.net/api/)
+2.  **Konfigurationsdatei:** Erstelle eine Konfigurationsdatei (z.B. `config.ini` oder `api_keys.py`), welche deine generierten API-Schlüssel sicher enthält, damit die Python-Skripte (`Meteostat_Weather.py`, `Weather_API_scraping.py`) darauf zugreifen können.
+
+> **Hinweis:** Der kostenlose Basis-Plan ist in der Regel ausreichend. Achte dennoch auf die maximal erlaubten Abfragen pro Tag/Monat.
+
+## 💻 Nutzung der Skripte & Analyse
+
+Das Projekt ist in zwei Hauptphasen unterteilt: Datenakquise und Datenanalyse.
+
+### Phase 1: Datenakquise (Scraping)
+
+Führe die Python-Scraping-Skripte aus, um die Wetterdaten zu sammeln. Diese Skripte erstellen die notwendigen SQL-Datenbanken (`.db`-Dateien) im Projektverzeichnis.
+
+```bash
+# Beispiel: Ausführen des Meteostat Scraping-Skripts
+python Meteostat_Weather.py
+```
+
+### Phase 2: Analyse mit Jupyter
+
+Sobald die Datenbanken gefüllt sind, kannst du die Analysen in den Jupyter Notebooks durchführen.
+
+1.  Starte den Jupyter Notebook Server im Projektverzeichnis:
+
+<!-- end list -->
+
+```bash
+jupyter notebook
+```
+
+2.  Öffne die relevanten Notebooks (z.B. `Test_nextbike_notebook.ipynb` oder `Test_weather_notebook.ipynb`).
+3.  Führe die Zellen nacheinander aus, um die Daten zu laden, zu verarbeiten und die Ergebnisse zu visualisieren.
+
+## 🤝 Mitwirken (Contributing)
+
+Dieses Projekt wurde im Rahmen einer Projektarbeit erstellt. Beiträge, Vorschläge und Bug-Reports sind jedoch jederzeit willkommen.
+
+1.  Forke das Repository.
+2.  Erstelle einen neuen Feature-Branch:
+
+<!-- end list -->
+
+```bash
+git checkout -b feature/amazing-feature
+```
+
+3.  Committe deine Änderungen:
+
+<!-- end list -->
+
+```bash
+git commit -m 'feat: Add amazing feature'
+```
+
+4.  Pushe zu deinem Branch:
+
+<!-- end list -->
+
+```bash
+git push origin feature/amazing-feature
+```
+
+5.  Öffne einen Pull Request.
+
+## 📧 Kontakt & Support
+
+Bei Fragen, Anregungen oder Problemen kannst du gerne ein **Issue** direkt in diesem GitHub-Repository erstellen.
+
+## 📜 Lizenz
+
+Dieses Projekt steht unter der **MIT-Lizenz**. Details dazu findest du in der Datei [LICENSE](https://www.google.com/search?q=LICENSE).
+
+```
+
+Gefällt dir diese Version, oder soll ich noch etwas anpassen?
+```
