@@ -1,7 +1,3 @@
-Absolut\! Hier ist die überarbeitete `README.md`, bei der ich alle Installationsschritte in das einheitliche Format mit Kopfzeile, Code-Block und Erklärungen gesetzt habe.
-
-Du kannst diesen Code direkt in deine `README.md` kopieren:
-
 ````markdown
 # 🚲 Wetter- & Ausleihverhalten-Analyse (Projektarbeit)
 
