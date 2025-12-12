@@ -51,11 +51,11 @@ pip install -r requirements.txt
 
 Die Skripte zur Wetterdatenerfassung benötigen API-Schlüssel (Key).
 
-# 1. Registrierung: Erstelle einen kostenlosen Account bei einem der folgenden Dienste:
+#### 1. Registrierung: Erstelle einen kostenlosen Account bei einem der folgenden Dienste:
 - OpenWeatherMap: https://openweathermap.org/api
 - Meteostat: https://dev.meteostat.net/api/
 
-# 2. Konfigurationsdatei: Erstelle eine Konfigurationsdatei (z.B. config.py oder api_keys.py), welche deine generierten API-Schlüssel sicher enthält, damit die Python-Skripte (`Meteostat_Weather.py`, `Weather_API_scraping.py`) darauf zugreifen können.
+#### 2. Konfigurationsdatei: Erstelle eine Konfigurationsdatei (z.B. config.py oder api_keys.py), welche deine generierten API-Schlüssel sicher enthält, damit die Python-Skripte (`Meteostat_Weather.py`, `Weather_API_scraping.py`) darauf zugreifen können.
 
 !!! Hinweis: Der kostenlose Basis-Plan ist in der Regel ausreichend. Achte dennoch auf die maximal erlaubten Abfragen pro Tag/Monat. 
 
