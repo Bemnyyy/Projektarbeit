@@ -45,7 +45,9 @@ cd Projektarbeit
 
 Alle benötigten Python-Bibliotheken sind in der `requirements.txt` aufgeführt
 
+```bash
 pip install -r requirements.txt
+```
 
 ### 3. API-Konfiguration (Wichtig!)
 
