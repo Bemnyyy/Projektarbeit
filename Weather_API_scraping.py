@@ -5,7 +5,7 @@ import requests as rs
 from datetime import datetime, date as dt_date
 import time
 import json
-from config import API_KEY
+from config import API_KEY_OPENWEATHER
 
 LAT = 49.006889
 LON = 8.403653
