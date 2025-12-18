@@ -1,0 +1,34 @@
+Kleine Dokumentation der Aufgabe (siehe PDF)
+
+Es wurde am Anfang ein GitHub Repo erstellt und mit Git wurden änderung hochgeladen
+
+
+Problem 1: SQL Fehler entsteht bei erstellen der DataBase sobald Daten anders sind.
+
+Angefangen haben wir mit der "Weather_API_scraping.py" datei hier sind wir nach dem sammeln der daten auf das problem gestoßen, 
+dass wenn es kein regen gibt die "rain" spalte nicht hinzugefügt wird aber sobald 
+es regen gibt, die daten nicht mehr anhängend geschrieben werden können, 
+da wir dann ein sql fehler bekommen haben, dass die spalte "rain" nicht existiert
+
+Lösung des ersten Problems:
+Wechsel zu einer anderen API (Hilfe durch Komilitone)
+
+--> Gewechselt zu "Meteostat"
+
+Sammlung und erstellung der Wetterdaten deutlich einfacher
+
+Problem 2: Neue API gibt zu viele unnötige Daten aus
+Lösung 2: siehe code --> Daten werden gekürzt gesammelt
+
+Kurz Erklärung von Meteostat_Weather.py:
+
+1. Sammelt Daten aus API
+2. Wählt nur die benötigten Daten aus da die API "metadata" und "data" ausgibt
+3. Erstellt aus den ausgewählten Daten eine SQL-Datenbank
+
+Es wurde dann die Datenbank Weather_Data_3.db erstellt mit 3 Tabellen, Wetterdaten für September, Oktober und November
+
+Als nächstes wurden Jupityer Notebook Dateien erstellt um erste Tests zur Visualisierung der Wetter und NextBike daten laufen zu lassen
+
+Der Nächste Schritt ging um die endgültige Visualisierung und Darstellung des Vergleichs zum Ausleihverhalten.
+Dies war die größte Herausforderung einen sinnvollen Code zu schreiben, der beide Datenbank in einen Zusammenhang setzt um Rückschlüsse auf das Ausleihverhalten bilden zu können.
