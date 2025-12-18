@@ -6,7 +6,7 @@
 
 ## 🎯 Projektübersicht
 
-Dieses Repository enthält die vollständige Implementierung einer Projektarbeit, die sich der **datenanalytischen Untersuchung des Ausleihverhaltens von NextBike im Kontext verschiedener Wetterbedingungen** widmet.
+Dieses Repository enthält die (un-)vollständige Implementierung einer Projektarbeit, die sich der **datenanalytischen Untersuchung des Ausleihverhaltens von NextBike im Kontext verschiedener Wetterbedingungen** widmet.
 
 Das Kernziel ist es, einen statistischen Zusammenhang zwischen gesammelten Wetterdaten (Temperatur, Niederschlag, etc.) und den NextBike-Nutzungsdaten herzustellen, um Muster und Rückschlüsse auf die Mobilitätsgewohnheiten der Nutzer zu ziehen.
 
