@@ -1,18 +1,22 @@
+import sqlite3
 import pandas as pd
-import geopandas as gpd
-from shapely import Point
+import folium
+from folium.plugins import FastMarkerCluster
+import os
 
+# Connection to db file
+conn = sqlite3.connect("nextbike_data_old.db")
+df = pd.read_sql_query("SELECT * FROM bike_locations", conn)
+conn.close()
 
-# pandas: read csv
-path = r'S:\Studium\3. Semester\VSMB 330 Digitalisierung und Mobilsoftware\Projektarbeit\NextBikeData as CSV\bike_locations.csv'
-df = pd.read_csv(path)
-#print(df.columns)
+# Mid Point of Map
+center_lat = df['lat'].mean()
+center_lng = df['lng'].mean()
 
-# shapely: create geometry
-geometry_col = [Point(xy) for xy in zip(df['lng'], df['lat'])]
-#print(geometry_col[:4])
+m = folium.Map(location=[center_lat, center_lng], zoom_start=13)
 
-# geopandas: host geospatial layer
-spatial_data = gpd.GeoDataFrame(df, geometry= geometry_col)
-spatial_data.set_crs(4326)
-print(spatial_data.plot())
+# marker for every row
+FastMarkerCluster(df[['lat', 'lng']].values.tolist()).add_to(m)
+
+#save map
+m.save("nextbike_map.html")
