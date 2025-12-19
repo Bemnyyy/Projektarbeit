@@ -15,21 +15,21 @@ def plot_1(data):
     
 def plot_2(data):
     # Temperatur pro Stunde als Linien
-    ax = data[['temp', 'tsun']].plot(kind='line', figsize=(12, 4))
+    ax = data[['temp']].plot(kind='line', figsize=(12, 4))
     ax.set_xlabel('Stunde')
     ax.set_ylabel('Temperatur [°C]')
     ax.set_title(f'Stündliche Temperatur – Station 10727 - Karlsruhe am {start} bis {end}')
 
 def plot_3(data):
     # temperatur und sonnenschein - stündlich 
-    ax = data[['temp', 'tsun']].plot(kind='bar', stacked=True, figsize=(12, 4))
+    ax = data[['temp', 'wspd']].plot(kind='bar', stacked=True, figsize=(12, 4))
     ax.set_xlabel('Stunde')
     ax.set_ylabel('Temperatur / Schneehöhe')
-    ax.set_title('Temperatur & Schnee – gestapelt')
+    ax.set_title('Temperatur & Windgeschwindigkeit – gestapelt')
 
 def plot_4(data):
     # Gestapelte Balken temperatur und Sonnenscheindauer
-    ax = data[['temp', 'tsun']].plot(kind='bar', figsize=(12, 4))
+    ax = data[['prcp', 'tsun']].plot(kind='bar', figsize=(12, 4))
     ax.set_xlabel('Stunde')
     ax.set_ylabel('Wert')
     ax.set_title('Niederschlag & Sonnenscheindauer – stündlich')
