@@ -16,7 +16,7 @@ DAILY_LIMIT = 800 # Max. eigentlich 1000 aber zur Sicherheit 800
 MIN_INTERVAL = 900 # 5 Minuten in sek.(300)
 
 def load_weather_data():
-    url = f'https://api.openweathermap.org/data/2.5/weather?lat={LAT}&lon={LON}&units={UNITS}&appid={API_KEY}'
+    url = f'https://api.openweathermap.org/data/2.5/weather?lat={LAT}&lon={LON}&units={UNITS}&appid={API_KEY_OPENWEATHER}'
     response = rs.get(url)
     return [response.json()] # Liste für DataFrame-Kompatibilität
 
@@ -24,7 +24,7 @@ def create_SQL(df):
     df_flat = pd.json_normalize(df.to_dict(orient="records")) # API Antwort "flach" auflösen aufgrund von verschachtelung der daten von der API
     df_flat['weather'] = df_flat['weather'].apply(json.dumps)
     engine = create_engine(f"sqlite:///{DB_PATH}")
-    df_flat.to_sql("karlsruhe_weather", con=engine, if_exists="append", index=False)
+    df_flat.to_sql("karlsruhe_weather", con=engine, if_exists="fail", index=False)
     print(f"{len(df_flat)} Datensätze wurden in die Datenbank geschrieben am {datetime.now().strftime('%Y-%m-%d')} um {datetime.now().strftime('%H:%M:%S')}")
     return df_flat
 
