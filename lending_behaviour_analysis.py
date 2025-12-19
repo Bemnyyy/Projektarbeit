@@ -20,6 +20,7 @@ bike_df = pd.read_sql_query("""
     WHERE timestamp BETWEEN '2025-09-14' AND '2025-10-09'
 """, conn)
 
+# convert "timestamp" from the database into a pandas datatime object
 bike_df['timestamp'] = pd.to_datetime(bike_df['timestamp'])
 bike_df = bike_df.sort_values(['bike_number', 'timestamp'])
 
