@@ -61,7 +61,9 @@ Die Skripte zur Wetterdatenerfassung benötigen API-Schlüssel (Key).
 
 ##### Hinweis: Der kostenlose Basis-Plan ist in der Regel ausreichend. Achte dennoch auf die maximal erlaubten Abfragen pro Tag/Monat. 
 
-#### 3. NextBike-Daten herunterladen: Lade die in diesen Skripten verwendeten NextBike Daten über die verlinkte Seite herunter und speichere diese im gleichen Ordner wie die Skripte ab
+### 4. NextBike-Daten herunterladen
+
+Lade die in diesen Skripten verwendeten NextBike Daten über die verlinkte Seite herunter und speichere diese im gleichen Ordner wie die Skripte ab
 - NextBike-Daten: https://bwsyncandshare.kit.edu/s/ReyJrRRzaFYMXtf?openfile=true
 
 ### 💻 Nutzung der Skripte & Analyse
