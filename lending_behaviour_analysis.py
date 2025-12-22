@@ -49,4 +49,42 @@ hourly_bikes['rent_rate'] = hourly_bikes['rented'] / hourly_bikes['bike_number']
 print("NextBike-Data successfully loaded!")
 conn.close()
 
-#TODO Loading Weather, Merging, Visualizaton
+# loading weather data for sep + oct
+print("Loading Weather-Data...")
+conn_w = sqlite3.connect("Weather_Data_3.db") 
+
+weather_query = """
+SELECT time, temp, prcp, wspd FROM karlsruhe_weather_09_2025
+UNION ALL
+SELECT time, temp, prcp, wspd FROM karlsruhe_weather_10_2025
+"""
+weather_df = pd.read_sql_query(weather_query, conn_w)
+weather_df['time'] = pd.to_datetime(weather_df['time'])
+weather_df['date'] = weather_df['time'].dt.date.astype(str)
+weather_df['hour'] = weather_df['time'].dt.hour.astype(int)
+weather_df['weekday'] = weather_df['time'].dt.weekday.astype(int)
+
+print("Weather-Data successfully loaded!")
+conn_w.close()
+
+# merging
+merged = pd.merge(hourly_bikes, weather_df[['date', 'hour', 'temp', 'prcp', 'wspd']], on=['date', 'hour'], how='left')
+print("merge successfully!")
+
+# define day-types for celebration-days in the time period (03.10 Tag der Dt. Einheit)
+holidays = ['2025-10-03']
+merged['date_str'] = merged['date'].astype(str)
+merged['day_type'] = np.where(merged['date_str'].isin(holidays), 'Feiertag', np.where(merged['weekday'] >= 5, 'Wochenende', 'Werktag'))
+
+print(f"Data analysed: {len(merged)} Stunden, {merged['day_type'].value_counts().to_dict()}")
+
+# set correlation
+corrs = {
+    'Temperatur': round(merged['rent_rate'].corr(merged['temp']), 3),
+    'Niederschlag': round(merged['rent_rate'].corr(merged['prcp']), 3),
+    'Wind': round(merged['rent_rate'].corr(merged['wspd']), 3)
+}
+
+print("\nCorrelation of borrowing behavior:", corrs)
+
+#TODO Grafiken erstellen und summary 
