@@ -87,4 +87,32 @@ corrs = {
 
 print("\nCorrelation of borrowing behavior:", corrs)
 
-#TODO Grafiken erstellen und summary 
+# Setting grafics
+fig, axes = plt.subplots(2, 2, figsize=(15, 12))
+fig.suptitle('Nextbike Ausleihverhalten vs. Wetter - Karlsruhe Sep/Okt 2025', fontsize=16)
+
+# 1: Correlation
+ax1 = axes[0,0]
+x = range(len(corrs))
+ax1.bar(x, corrs.values(), color=['orange', 'blue', 'gray'])
+ax1.set_title('Korrelationen mit Ausleihquote')
+ax1.set_xticks(x)
+ax1.set_xticklabels(corrs.keys(), rotation=0)
+ax1.axhline(0, color='black', lw=0.5)
+
+# 2 hourly lending by day-type
+ax2 = axes[0,1]
+hourly_avg = merged.groupby(['hour', 'day_type'])['rent_rate'].mean().unstack()
+hourly_avg.plot(ax=ax2, marker='o')
+ax2.set_title('Stündliche Ausleihmuster nach Tagstyp')
+ax2.set_xlabel('Uhrzeit')
+ax2.set_ylabel('Ausleihquote')
+ax2.legend(title='Tagstyp')
+
+plt.tight_layout()
+plt.savefig('nextbike_weather_analysis.png', dpi=300, bbox_inches='tight')
+plt.show()
+
+# TODO maybe two more statistics and a summary
+# Idea: lending quote by temp and temp vs lending behaviour
+# Summary: show the mean of all stats
