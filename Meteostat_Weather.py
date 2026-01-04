@@ -2,7 +2,7 @@ import requests
 import pandas as pd
 from sqlalchemy import create_engine
 from datetime import datetime
-from config import API_KEY_METEOSTAT 
+from config import API_KEY_METEOSTAT
 
 DB_PATH = "Weather_Data_3.db"
 CURRENT_DATE = str(datetime.now())[0:10] # Time format example: "2025-09-30"

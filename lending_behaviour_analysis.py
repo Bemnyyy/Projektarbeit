@@ -109,10 +109,40 @@ ax2.set_xlabel('Uhrzeit')
 ax2.set_ylabel('Ausleihquote')
 ax2.legend(title='Tagstyp')
 
+# 3 lending by temp
+ax3 = axes[1,0]
+merged['temp_bin'] = pd.cut(merged['temp'], bins=5, labels=['<5°C','5-10°C','10-15°C','15-20°C','>20°C'])
+temp_stats = merged.groupby(['day_type', 'temp_bin'])['rent_rate'].mean().unstack()
+temp_stats.plot(kind='bar', ax=ax3)
+ax3.set_title('Ausleihquote nach Temperatur')
+ax3.legend(title='Tagstyp', bbox_to_anchor=(1.05, 1), loc='upper left')
+ax3.tick_params(axis='x', rotation=45)
+ax3.set_ylabel('Ausleihquote')
+
+# 4 temp vs lending behaviour
+ax4 = axes[1,1]
+colors = {'Werktag':'blue', 'Wochenende':'green', 'Feiertag':'red'}
+for day_type, color in colors.items():
+    subset = merged[merged['day_type'] == day_type]
+    ax4.scatter(subset['temp'], subset['rent_rate'], 
+               c=color, label=day_type, alpha=0.6, s=10)
+ax4.set_xlabel('Temperatur [°C]')
+ax4.set_ylabel('Ausleihquote')
+ax4.set_title('Temperatur vs Ausleihverhalten')
+ax4.legend()
+
 plt.tight_layout()
 plt.savefig('nextbike_weather_analysis.png', dpi=300, bbox_inches='tight')
 plt.show()
 
-# TODO maybe two more statistics and a summary
-# Idea: lending quote by temp and temp vs lending behaviour
-# Summary: show the mean of all stats
+# 7 summary table
+summary_stats = merged.groupby('day_type').agg({
+    'rent_rate': ['mean', 'std'],
+    'temp': 'mean',
+    'prcp': 'mean',
+    'wspd': 'mean'
+}).round(3)
+print("\n==== SUMMARY ====")
+print(summary_stats)
+print(f"\nTotal Period: {merged['date'].min()} till {merged['date'].max()}")
+print("Graphics saved: nextbike_weather_analysis.png")
