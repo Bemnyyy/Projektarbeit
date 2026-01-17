@@ -1,5 +1,4 @@
-## Überarbeiteter README-Entwurf
-
+# Analyse des Ausleihverhaltens von NextBikes im Bezug auf Wetterdaten
 
 # Wetter- & Ausleihverhalten-Analyse (Projektarbeit)
 
