@@ -1,7 +1,5 @@
 # Analyse des Ausleihverhaltens von NextBikes im Bezug auf Wetterdaten
 
-# Wetter- & Ausleihverhalten-Analyse (Projektarbeit)
-
 ![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python)
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebooks-orange?style=for-the-badge&logo=jupyter)
 ![License](https://img.shields.io/github/license/Bemnyyy/Projektarbeit?style=for-the-badge)
