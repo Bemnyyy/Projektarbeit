@@ -125,9 +125,8 @@ Die Skripte erzeugen bzw. aktualisieren entsprechende SQLite-Datenbanken (`.db`)
 jupyter notebook
 ```
 
-2. Relevante Notebooks öffnen, z.B.:
-   - `Test_nextbike_notebook.ipynb`
-   - `Test_weather_notebook.ipynb`
+2. Haupt Notebooks öffnen, z.B.:
+   - `Abgabe_Notebook`
 
 3. Zellen nacheinander ausführen, um:
    - Daten aus den `.db`-Dateien zu laden
@@ -149,7 +148,6 @@ jupyter notebook
 ## Kontakt
 
 Bei Fragen, Anregungen oder Problemen kann ein Issue in diesem Repository erstellt werden.  
-Alternative Kontaktwege können bei Bedarf in der Projektarbeit selbst angegeben werden.
 
 ---
 
