@@ -1,5 +1,3 @@
-Die bestehende README ist bereits klar strukturiert und gut verständlich; sinnvoll wäre vor allem eine stärkere Trennung zwischen „Projekt (wissenschaftliche Arbeit)“ und „Code-Repository“, etwas mehr Kontext zu Datenquellen sowie ein kurzer Hinweis zu Limitierungen und Reproduzierbarkeit. [mobidata-bw](https://mobidata-bw.de/dataset/?res_format=GeoJSON&tags=Bike-Sharing)
-
 ## Überarbeiteter README-Entwurf
 
 
