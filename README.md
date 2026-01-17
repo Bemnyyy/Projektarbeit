@@ -2,14 +2,14 @@ Die bestehende README ist bereits klar strukturiert und gut verständlich; sinnv
 
 ## Überarbeiteter README-Entwurf
 
-```markdown
-# 🚲 Wetter- & Ausleihverhalten-Analyse (Projektarbeit)
+
+# Wetter- & Ausleihverhalten-Analyse (Projektarbeit)
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python)
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebooks-orange?style=for-the-badge&logo=jupyter)
 ![License](https://img.shields.io/github/license/Bemnyyy/Projektarbeit?style=for-the-badge)
 
-## 🎯 Projektübersicht
+## Projektübersicht
 
 Dieses Repository enthält die Implementierung einer Projektarbeit, die das **Ausleihverhalten von NextBike im Kontext verschiedener Wetterbedingungen** datenanalytisch untersucht.  
 Ziel ist es, statistische Zusammenhänge zwischen Wetterdaten (z.B. Temperatur, Niederschlag) und NextBike-Nutzungsdaten herzustellen, um Muster und Rückschlüsse auf die Mobilitätsgewohnheiten der Nutzer zu ermöglichen.
@@ -18,7 +18,7 @@ Die Projektarbeit richtet sich an den Hochschulkontext (Lehrveranstaltungen zu D
 
 ---
 
-## 🌟 Hauptfunktionen
+## Hauptfunktionen
 
 - **API-Scraping:** Automatisierte Erfassung von Wetterdaten über externe APIs (z.B. OpenWeatherMap, Meteostat).
 - **Datenhaltung:** Speicherung der gesammelten Roh- und Prozessdaten in SQLite-Datenbanken (`.db`-Dateien).
@@ -27,7 +27,7 @@ Die Projektarbeit richtet sich an den Hochschulkontext (Lehrveranstaltungen zu D
 
 ---
 
-## 🛠️ Technologien & Stack
+## Technologien & Stack
 
 | Kategorie    | Technologie     | Beschreibung |
 | :----------- | :-------------- | :----------- |
@@ -38,7 +38,7 @@ Die Projektarbeit richtet sich an den Hochschulkontext (Lehrveranstaltungen zu D
 
 ---
 
-## 🚀 Erste Schritte
+## Erste Schritte
 
 ### 1. Repository klonen
 
@@ -66,7 +66,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🔑 API-Konfiguration (Wichtig)
+## API-Konfiguration (Wichtig)
 
 Für die Wetterdatenerfassung werden API-Schlüssel benötigt.
 
@@ -90,7 +90,7 @@ Die Skripte (`Meteostat_Weather.py`, `Weather_API_scraping.py` o.ä.) greifen au
 
 ---
 
-## 🚴 NextBike-Daten bereitstellen
+## NextBike-Daten bereitstellen
 
 Die verwendeten NextBike-Daten müssen lokal heruntergeladen und im Projektordner abgelegt werden.
 
@@ -101,7 +101,7 @@ Speichere die Dateien im gleichen Ordner wie die Skripte, die diese Daten einles
 
 ---
 
-## 💻 Nutzung der Skripte & Analyse
+## Nutzung der Skripte & Analyse
 
 Das Projekt ist in zwei Hauptphasen gegliedert: **Datenakquise** und **Datenanalyse**.
 
@@ -138,7 +138,7 @@ jupyter notebook
 
 ---
 
-## 📊 Reproduzierbarkeit & Hinweise
+## Reproduzierbarkeit & Hinweise
 
 - Die Ergebnisse hängen von:
   - dem verwendeten Zeitraum der NextBike-Daten,
@@ -148,17 +148,14 @@ jupyter notebook
 
 ---
 
-## 📧 Kontakt
+## Kontakt
 
 Bei Fragen, Anregungen oder Problemen kann ein Issue in diesem Repository erstellt werden.  
 Alternative Kontaktwege können bei Bedarf in der Projektarbeit selbst angegeben werden.
 
 ---
 
-## 📜 Lizenz
+## Lizenz
 
 Dieses Projekt steht unter der **MIT-Lizenz**.  
 Details sind der Datei `LICENSE` zu entnehmen.
-```
-
-Wenn du magst, kann der Text noch stärker auf „Karlsruhe / KVV.nextbike“ oder deinen konkreten Untersuchungszeitraum zugeschnitten werden (z.B. eigener Abschnitt „Untersuchungsgebiet & Zeitraum“).
